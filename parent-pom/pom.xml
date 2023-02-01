@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>20d1b288-85a2-40f8-9595-f9590fd4e3be</groupId>
+		<artifactId>solutions-bom</artifactId>
+		<version>1.0.5</version>
+		<relativePath>../bom/pom.xml</relativePath>
+	</parent>
+
+<!--  GroupID must be Organization ID / Business Group ID -->
+	<groupId>20d1b288-85a2-40f8-9595-f9590fd4e3be</groupId>
+	<artifactId>solutions-parent-pom</artifactId>
+	<version>1.0.1</version>
+	<packaging>pom</packaging>
+
+	<name>solutions-parent-pom</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+<!-- Not explicitly used but needed for deployment to Exchange, otherwise Exchange cannot determine the asset type -->
+    	<type>custom</type>
+		<app.runtime>4.4.0-20220420</app.runtime>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

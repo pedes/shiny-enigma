@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>20d1b288-85a2-40f8-9595-f9590fd4e3be</groupId>
+		<artifactId>solutions-parent-pom</artifactId>
+		<version>1.0.1</version>
+		
+		<!-- relative route -->
+		<relativePath>../parent-pom/pom.xml</relativePath>
+		
+		<!-- short : resolves parent pom .m2 local repo -->
+		<!--<relativePath/> -->
+		
+		<!-- without relativePath Parent pom is downloaded automatically remote repo -->
+	</parent>
+
+	<groupId>com.mycompany</groupId>
+	<artifactId>check-in-api-app</artifactId>
+	<version>1.0.0</version>
+	<packaging>mule-application</packaging>
+
+	<name>check-in-api-app</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<app.runtime>4.4.0-20220922</app.runtime>
+
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.2.0</version>
+			</plugin>
+			<plugin>
+					<groupId>org.mule.tools.maven</groupId>
+					<artifactId>mule-maven-plugin</artifactId>
+					<extensions>true</extensions>
+					<configuration>
+						<cloudhub2Deployment>
+							<uri>https://anypoint.mulesoft.com</uri>
+							<businessGroupId>20d1b288-85a2-40f8-9595-f9590fd4e3be</businessGroupId>
+							<environment>Sandbox</environment>
+							
+							<target>Cloudhub-US-East-2</target>
+							<provider>MC</provider>
+							
+							<muleVersion>4.4.0</muleVersion>
+							
+							<server>cloudhub-deploy</server>							
+              				<!-- reads credentials from settings.xml -->
+              				
+							<applicationName>check-in-api-acm</applicationName>
+							<replicas>1</replicas>
+							<vCores>0.1</vCores>
+							<deploymentTimeout>240000</deploymentTimeout>
+							<properties>
+								<api.id>${api.id}</api.id>
+								<anypoint.platform.client_id>${ap.client_id}</anypoint.platform.client_id>
+								<anypoint.platform.client_secret>${ap.client_secret}</anypoint.platform.client_secret>
+							</properties>
+							<deploymentSettings>
+								<http>
+									<inbound>
+										<lastMileSecurity>true</lastMileSecurity>
+									</inbound>
+								</http>
+							</deploymentSettings>
+							<integrations>
+								<services>
+									<objectStoreV2>
+										<enabled>true</enabled>
+									</objectStoreV2>
+								</services>
+							</integrations>
+						</cloudhub2Deployment>
+					</configuration>
+				</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.mule.connectors</groupId>
+			<artifactId>mule-http-connector</artifactId>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.connectors</groupId>
+			<artifactId>mule-sockets-connector</artifactId>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>20d1b288-85a2-40f8-9595-f9590fd4e3be</groupId>
+			<artifactId>check-in-papi-api</artifactId>
+			<version>1.0.0</version>
+			<classifier>oas</classifier>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-apikit-module</artifactId>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+	</dependencies>
+
+</project>
