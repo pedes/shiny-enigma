@@ -18,7 +18,7 @@
 
 	<groupId>20d1b288-85a2-40f8-9595-f9590fd4e3be</groupId>
 	<artifactId>check-in-api-app</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
 	<name>check-in-api-app</name>
@@ -56,7 +56,7 @@
 							<server>cloudhub-deploy</server>							
               				<!-- reads credentials from settings.xml -->
               				
-							<applicationName>check-in-api-acm</applicationName>
+							<applicationName>check-in-acmfinal</applicationName>
 							<replicas>1</replicas>
 							<vCores>0.1</vCores>
 							<deploymentTimeout>240000</deploymentTimeout>
