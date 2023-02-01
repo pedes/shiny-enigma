@@ -150,4 +150,4 @@ jobs:
         AUTHOR: "Andres Morales"
       run: |
         artifactName=$(ls *.jar | head -1)
-        mvn deploy --file check-in-api-app/pom.xml -DmuleDeploy -Dapi.id=18462308 -Dap.client_id=1f3fe0b1e2324fb5bd274e22fe451196 -Dap.client_secret=F27B08e2C7Ab45cDA47747856d2fDe43
+        mvn deploy --file check-in-api-app/pom.xml -DmuleDeploy -Dapi.id="${{ secrets.API_ID }}" -Dap.client_id=1f3fe0b1e2324fb5bd274e22fe451196 -Dap.client_secret=F27B08e2C7Ab45cDA47747856d2fDe43
