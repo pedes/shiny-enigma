@@ -73,6 +73,7 @@
 										<lastMileSecurity>true</lastMileSecurity>
 									</inbound>
 								</http>
+								<updateStrategy>rolling</updateStrategy>
 							</deploymentSettings>
 							<integrations>
 								<services>
