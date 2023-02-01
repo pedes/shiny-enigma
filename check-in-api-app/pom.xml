@@ -16,7 +16,7 @@
 		<!-- without relativePath Parent pom is downloaded automatically remote repo -->
 	</parent>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>20d1b288-85a2-40f8-9595-f9590fd4e3be</groupId>
 	<artifactId>check-in-api-app</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
