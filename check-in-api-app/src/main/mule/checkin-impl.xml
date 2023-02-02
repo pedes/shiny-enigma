@@ -44,7 +44,7 @@ output application/json
 output application/json
 ---
 {
-  paymentID: "PAY-1AKD7482FAB9STATKO"
+  paymentID: "PAY-andres-updated-1AKD7482FAB9STATKO"
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>
